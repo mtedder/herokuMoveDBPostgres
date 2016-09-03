@@ -3,12 +3,8 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<!-- <class name="com.gc.herokudemo.dto.Film" table="Film" catalog="heroku_5903db1a2be077d"> -->
-	<!-- <class name="com.gc.herokudemo.dto.Film" table="Film" catalog="sakila"> -->
-	<class name="com.gc.herokudemo.dto.Movies" table="movies">
-		<!-- <id name="film_id" type="int" column="film_id"> -->
+	<class name="com.gc.herokudemo.dto.Movies" table="movies">		
 		<id name="filmid" type="int" column="idmovies">
-<!-- 			<column name="film_id" /> -->
 			 <generator class="native"/>			
 		</id>
 		<!-- Alias for film_id -->

@@ -13,7 +13,7 @@ import org.hibernate.cfg.Configuration;
  * This code is based on code from
  * Ref:http://docs.jboss.org/hibernate/core/3.3/reference/en/html/tutorial.html#tutorial-firstapp-helpers
  *
- * This is a singleton needed to prevent recreating connections that exceed the connection
+ * This is a singleton needed to prevent recreating connections that exceed the heroku postges DB connection limit
  */
 public class HibernateUtil {
 
@@ -33,7 +33,7 @@ public class HibernateUtil {
 	private static SessionFactory buildSessionFacotry(){
 		try {
 			Configuration cfg = new Configuration();			
-			URI uri = new URI(System.getenv("DATABASE_URL"));			
+			URI uri = new URI(System.getenv("DATABASE_URL"));//Database URL stored in environment variable			
 			//URI uri = new URI(url);
 			String[] userInfo = uri.getUserInfo().split(":");// get username and
 																// password from

@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author Maurice
- * Data Transfer Object DTO for Catagory table 
+ * Data Transfer Object DTO for Category table 
  */
 @XmlRootElement
 public class Category{

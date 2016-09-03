@@ -30,27 +30,7 @@ public class MovieDao {
 	/**
 	 * Constructor with hibernate configurations initializations
 	 */
-	public MovieDao() {
-		/*try {
-			Configuration cfg = new Configuration();			
-			URI uri = new URI(System.getenv("DATABASE_URL"));			
-			//URI uri = new URI(url);
-			String[] userInfo = uri.getUserInfo().split(":");// get username and
-																// password from
-																// uri string
-			String username = userInfo[0];
-			String password = userInfo[1];
-			String dbURL = "jdbc:postgresql://" + uri.getHost() + ":" + uri.getPort() + uri.getPath();//Use this part to ru locally + "?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory";
-
-			cfg.setProperty("hibernate.connection.url", dbURL);
-			cfg.setProperty("hibernate.connection.username", username);
-			cfg.setProperty("hibernate.connection.password", password);			
-			factory = cfg.configure().buildSessionFactory();
-		} catch (Throwable ex) {
-			System.err.println("Failed to create sessionFactory object." + ex);
-			throw new ExceptionInInitializerError(ex);
-		}*/
-		
+	public MovieDao() {				
 		factory = HibernateUtil.getSessionFactory();
 	}
 
@@ -102,7 +82,7 @@ public class MovieDao {
 		try {
 			tx = session.beginTransaction();
 			// This is required because the resultset is the result of a join
-			// and has no entity mapping
+			// and has no entity mapping - Figure out how to convert this to criteria queries later
 			Query query = session
 					.createSQLQuery(
 							"SELECT f.idmovies as filmid, f.title, f.rating FROM Movies as f, Category as cat, MovieCategory as fcat where f.idmovies = fcat.idmovies and cat.idcategory = fcat.idcategory and cat.name =:film_category")						

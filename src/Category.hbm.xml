@@ -3,8 +3,6 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<!-- <class name="com.gc.herokudemo.dto.Category" table="Category" catalog="heroku_5903db1a2be077d"> -->
-<!-- 	<class name="com.gc.herokudemo.dto.Category" table="Category" catalog="sakila"> -->
 	<class name="com.gc.herokudemo.dto.Category" table="category">
 		
 		<id name="categoryId" type="int">
