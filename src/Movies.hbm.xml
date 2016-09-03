@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- <class name="com.gc.herokudemo.dto.Film" table="Film" catalog="heroku_5903db1a2be077d"> -->
+	<!-- <class name="com.gc.herokudemo.dto.Film" table="Film" catalog="sakila"> -->
+	<class name="com.gc.herokudemo.dto.Movies" table="movies">
+		<!-- <id name="film_id" type="int" column="film_id"> -->
+		<id name="filmid" type="int" column="idmovies">
+<!-- 			<column name="film_id" /> -->
+			 <generator class="native"/>			
+		</id>
+		<!-- Alias for film_id -->
+<!-- 		<property name="idKey" column="film_id" type="int" unique="true" insert="false" update="false"/> -->
+		
+		<property name="title" type="string">
+			<column name="title"/>
+		</property>
+		<!-- <property name="description" type="string">
+			<column name="description"/>
+		</property>	 -->
+<!-- 		<property name="release_year" type="date"> -->
+<!-- 			<column name="release_year"/> -->
+<!-- 		</property> -->
+		<!-- <property name="length" type="int">
+			<column name="length"/>
+		</property> -->
+		<!-- <property name="likes" type="int">
+			<column name="likes"/>
+		</property>
+		<property name="dislikes" type="int">
+			<column name="dislikes"/> 
+		</property>		-->		
+		<property name="rating" type="float">
+ 			<column name="rating"/>
+ 		</property>
+<!-- 		<set name="specialFeatures" table="Film"> -->
+<!--     		<key column="film_id"/> -->
+<!--     		<element column="special_features" type="string"/> -->
+<!-- 		</set>		 -->
+		<!-- <property name="specialFeatures" type="set">
+			<column name="special_features"/>
+		</property> -->		
+	</class>
+</hibernate-mapping>

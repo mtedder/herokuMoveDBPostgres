@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- <class name="com.gc.herokudemo.dto.FilmCategory" table="film_category" catalog="heroku_5903db1a2be077d"> -->
+	<!-- <class name="com.gc.herokudemo.dto.FilmCategory" table="film_category" catalog="sakila"> -->
+	<!-- <class name="com.gc.herokudemo.dto.FilmCategory" table="category"> -->
+	<class name="com.gc.herokudemo.dto.MovieCategory" table="moviecategory">
+	
+		<id name="filmId" type="int">
+			<!-- <column name="film_id" />	 -->
+			<column name="idmovies" />		
+		</id>
+		<property name="categoryId" type="int">
+			<!-- <column name="category_id" not-null="true"/> -->
+			<column name="idcategory" not-null="true"/>
+		</property>			
+	</class>
+</hibernate-mapping>
